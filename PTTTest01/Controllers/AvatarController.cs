@@ -14,12 +14,6 @@ namespace PTTTest01.Controllers
         [HttpGet]
         public async Task<IActionResult> Get([FromQuery] string? userIdentifier)
         {
-            if (string.IsNullOrEmpty(userIdentifier))
-            {
-                _logger.LogError($"User identifier not provided.");
-                return BadRequest(new { message = AvatarConstants.BadRequestMessageUserIDNotProvided });
-            }
-
             var avatarUrl = await _avatarService.GetAvatarUrl(userIdentifier);
 
             if (string.IsNullOrEmpty(avatarUrl))

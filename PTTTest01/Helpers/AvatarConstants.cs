@@ -11,8 +11,6 @@
 
         public const string JsonApiBaseUrl = "https://my-json-server.typicode.com/ck-pacificdev/tech-test/images/";
 
-        public const string BadRequestMessageUserIDNotProvided = "Bad Request: User ID is required but not provided.";
-
         public const int InternalServerErrorCode = 500;
         public const string InternalServerErrorMessage = "Internal Server Error: An unexpected error occurred.";
     }

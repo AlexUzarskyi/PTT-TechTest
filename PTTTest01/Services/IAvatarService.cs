@@ -2,6 +2,6 @@
 {
     public interface IAvatarService
     {
-        Task<string?> GetAvatarUrl(string userIdentifier);
+        Task<string?> GetAvatarUrl(string? userIdentifier);
     }
 }

@@ -9,8 +9,13 @@ namespace PTTTest01.Services
         private readonly IAvatarJsonHelper _avatarJsonHelper = avatarJsonHelper;
         private readonly ILogger _logger = logger;
 
-        public async Task<string?> GetAvatarUrl(string userIdentifier)
+        public async Task<string?> GetAvatarUrl(string? userIdentifier)
         {
+            if (string.IsNullOrEmpty(userIdentifier))
+            {
+                return AvatarConstants.DefaultAvatarUrl;
+            }
+
             char lastChar = userIdentifier[^1];
 
             if (char.IsDigit(lastChar) && "6789".Contains(lastChar))
